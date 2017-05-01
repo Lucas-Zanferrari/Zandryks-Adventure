@@ -4,4 +4,4 @@
 - Créditos ao fim do jogo
 - Opção para jogar novamente ao fim do jogo
 - Integração com Google Cardboard
-- Integraço com controle bluetooth
+- Integração com controle bluetooth
