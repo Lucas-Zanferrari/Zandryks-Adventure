@@ -16,10 +16,11 @@ public class recuperaStatus : MonoBehaviour {
 		string names = "";
 		foreach (string s in foundRelatives) {			
 			names += s;
-			names = names + ",";
+			names = names + ", ";
 		}
 
-		txt.text =names.Remove(names.Length - 1); 
+		txt.text = names.Remove(names.Length - 1);
+		foundRelatives.Clear();
 	}
 	
 	// Update is called once per frame
