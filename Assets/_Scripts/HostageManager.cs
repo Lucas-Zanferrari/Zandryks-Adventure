@@ -40,19 +40,18 @@ public class HostageManager : MonoBehaviour {
     IEnumerator EndGameRoutine(int secondsToWait)
     {   
         yield return new WaitForSeconds(secondsToWait);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
         // save any game data here
-        //#if UNITY_EDITOR
+        // #if UNITY_EDITOR
         // Application.Quit() does not work in the editor so
         // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
-            //UnityEditor.EditorApplication.isPlaying = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // UnityEditor.EditorApplication.isPlaying = false;
+        // #else
+            // Application.Quit();
             
-        //#else
-            //Application.Quit();
-            
-        //#endif
-        //Destroy(gameObject);
-        //Application.Quit();
+        // #endif
+        // Destroy(gameObject);
+        // Application.Quit();
     }
 }
