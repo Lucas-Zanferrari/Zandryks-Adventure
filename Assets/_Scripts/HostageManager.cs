@@ -5,25 +5,53 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HostageManager : MonoBehaviour {
-    public float Xmin;
-    public float Xmax;
-    public float Ymin;
-    public float Ymax;
-    public float Zmin;
-    public float Zmax;
     public string siblingName;
     public int secondsToWait;
+    public Vector3 pos0;
+    public Vector3 pos1;
+    public Vector3 pos2;
+    public Vector3 pos3;
+    public Vector3 pos4;
+    public Vector3 pos5;
+    public Vector3 pos6;
+    public Vector3 pos7;
+    public Vector3 pos8;
+    public Vector3 pos9;
 
-    // Use this for initialization
-    void Start () {        
-        float x = Random.Range(Xmin, Xmax);
-        float y = Random.Range(Ymin, Ymax);
-        float z = Random.Range(Zmin, Zmax);
-        transform.position = new Vector3(x, y, z);
-        //Physics.gravity = new Vector3(0, -1, 0);
-        //gameObject.AddComponent<Rigidbody>();
-        
+    void Start()
+    {
+        List<Vector3> posicoes = new List<Vector3>();
+        posicoes.Add(pos0);
+        posicoes.Add(pos1);
+        posicoes.Add(pos2);
+        posicoes.Add(pos3);
+        posicoes.Add(pos4);
+        posicoes.Add(pos5);
+        posicoes.Add(pos6);
+        posicoes.Add(pos7);
+        posicoes.Add(pos8);
+        posicoes.Add(pos9);
+        int i = Random.Range(0, 9);
+        transform.position = posicoes[i];
     }
+        /*public float Xmin;
+        public float Xmax;
+        public float Ymin;
+        public float Ymax;
+        public float Zmin;
+        public float Zmax;
+
+
+        // Use this for initialization
+        void Start () {        
+            float x = Random.Range(Xmin, Xmax);
+            float y = Random.Range(Ymin, Ymax);
+            float z = Random.Range(Zmin, Zmax);
+            transform.position = new Vector3(x, y, z);
+            //Physics.gravity = new Vector3(0, -1, 0);
+            //gameObject.AddComponent<Rigidbody>();
+
+        }*/
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "Wolf White Magic") {
