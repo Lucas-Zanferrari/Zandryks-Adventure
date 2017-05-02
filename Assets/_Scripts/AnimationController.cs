@@ -10,7 +10,7 @@ public class AnimationController : MonoBehaviour {
     {
         if (col.gameObject.name == "Wolf White Magic" && firstTime) {
             firstTime = false;
-            GetComponent<Animator>().SetTrigger("Action");
+            GetComponent<Animator>().SetTrigger("_Jump");
             GetComponent<AudioSource>().Play();
             
         }
