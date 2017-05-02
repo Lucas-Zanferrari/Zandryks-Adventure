@@ -83,8 +83,8 @@ namespace MalbersAnimations
             if (Time.timeScale < float.Epsilon) return;
 
 #if !CROSS_PLATFORM_INPUT
-            var x = Input.GetAxis("Mouse X");                               // Read the user input
-            var y = Input.GetAxis("Mouse Y");
+            var x = Input.GetAxis("Horizontal");                               // Read the user input
+            var y = Input.GetAxis("Vertical");
 #else
             var x = CrossPlatformInputManager.GetAxis("Mouse X");
             var y = CrossPlatformInputManager.GetAxis("Mouse Y");

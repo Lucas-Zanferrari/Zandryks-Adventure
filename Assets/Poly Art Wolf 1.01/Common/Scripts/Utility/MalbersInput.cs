@@ -138,11 +138,39 @@ namespace MalbersAnimations
         void FixedUpdate()
         {
 #if !CROSS_PLATFORM_INPUT
-            h = Input.GetAxis("Horizontal");
-            v = Input.GetAxis("Vertical");
+            bool forwardBool = Input.GetButton("Fire1");
+            bool rightBool = Input.GetButton("Fire2");
+            bool leftBool = Input.GetButton("Fire3");
+
+            v = forwardBool ? 1 : 0;
+
+            if (rightBool)
+            {
+                if (!leftBool)
+                {
+                    h = 1;
+                }
+                else
+                {
+                    h = 0;
+                }
+            }
+            else
+            {
+                if (!leftBool)
+                {
+                    h = 0;
+                }
+                else
+                {
+                    h = -1;
+                }
+            }
 #else
-            h = CrossPlatformInputManager.GetAxis("Horizontal");
-            v = CrossPlatformInputManager.GetAxis("Vertical");
+            bool hBool2 = CrossPlatformInputManager.GetButtonDown("Fire1");
+            bool vBool2 = CrossPlatformInputManager.GetButtonDown("Fire2");
+            h = hBool2 ? 1 : 0;
+            v = vBool2 ? 1 : 0;
 #endif
             SetInput();
         }
